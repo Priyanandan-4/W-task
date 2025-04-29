@@ -3,12 +3,13 @@
 import { useState } from "react"
 
 export default function Home() {
-  const [director, setDirector] = useState("")
-  const [movie, setMovie] = useState("")
-
-
+  const [director, setDirector] = useState()
+  const [movie, setMovie] = useState()
+  const [todos, setTodos] = useState([])
   const handleSubmit = () => {
-y
+  setTodos([...director,todos])
+  setDirector('')
+
   }
 
   return (
@@ -36,6 +37,19 @@ y
           </button>
         </div>
       </form>
+
+      <div className="w-full ">
+        {todos.map((todo) => (
+          <div key={todo.id} className="flex items-center gap-4 mb-4">
+            <div className="w-[700px] p-3 bg-white border border-gray-300">{todo}</div>
+            <div className="w-[700px] p-3 bg-white border border-gray-300">{todo}</div>
+            <div className="p-3 px-3 bg-red-700">
+            
+              remove
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

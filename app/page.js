@@ -2,18 +2,19 @@
 
 import { useState } from "react"
 
-export default function Home() {
+
+const page = () => {
   const [director, setDirector] = useState()
   const [movie, setMovie] = useState()
   const [todos, setTodos] = useState([])
   const handleSubmit = () => {
   setTodos([...director,todos])
   setDirector('')
-
   }
 
   return (
-    <div className="flex flex-col items-center p-8">
+    <div>
+       <div className="flex flex-col items-center p-8">
       <h1 className="text-4xl font-sans pt-10 pb-8">Director and Movies</h1>
 
       <form onSubmit={handleSubmit} className="w-full ">
@@ -51,5 +52,9 @@ export default function Home() {
         ))}
       </div>
     </div>
+    </div>
   )
+
 }
+
+export default page
